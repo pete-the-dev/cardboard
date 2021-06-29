@@ -59,7 +59,6 @@ public class BukkitFabricMod implements ModInitializer {
 
         LOGGER.info("Registering iCommon events..");
         int r = EventRegistery.registerAll(this);
-        LOGGER.info("Registered " + r + " events.");
 
         try {
             MappingsReader.main(null);
