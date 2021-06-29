@@ -59,6 +59,8 @@ dependencies {
     // Spigot API
     extraLibs fileTree(dir: 'libs', include: "${project.paper_jar}")
     extraLibs fileTree(dir: 'libs', include: 'commons-lang-2.6.jar')
+    
+    compileOnly fileTree(dir: 'libs', include: 'iCommon-1.17.jar')
 
     // extraLibs fileTree(dir: 'libs', include: 'slf4j.jar')
     // compile   fileTree(dir: 'libs', include: 'material-compile-only.jar')

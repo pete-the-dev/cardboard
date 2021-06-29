@@ -29,18 +29,29 @@ public class MixinBlockEntity implements IMixinBlockEntity {
     @Shadow public BlockPos pos;
 
     @Override
+    public void setCardboardPersistentDataContainer(CraftPersistentDataContainer c) {
+        this.persistentDataContainer = c;
+    }
+
+    @Override
+    public CraftPersistentDataTypeRegistry getCardboardDTR() {
+        return DATA_TYPE_REGISTRY;
+    }
+
+    @Override
     public CraftPersistentDataContainer getPersistentDataContainer() {
         return persistentDataContainer;
     }
 
-    @Inject(at = @At("TAIL"), method = "readNbt")
+    // Cardboard Refactor - Replaced
+    /*@Inject(at = @At("TAIL"), method = "readNbt")
     public void loadEnd(NbtCompound tag, CallbackInfo callback) {
         this.persistentDataContainer = new CraftPersistentDataContainer(DATA_TYPE_REGISTRY);
 
         NbtCompound persistentDataTag = tag.getCompound("PublicBukkitValues");
         if (persistentDataTag != null)
             this.persistentDataContainer.putAll(persistentDataTag);
-    }
+    }*/
 
     @Inject(at = @At("RETURN"), method = "writeNbt")
     public void saveEnd(NbtCompound tag, @SuppressWarnings("rawtypes") CallbackInfoReturnable callback) {
