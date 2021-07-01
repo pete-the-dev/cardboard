@@ -1,6 +1,6 @@
 /**
- * The Bukkit for Fabric Project
- * Copyright (C) 2020 Javazilla Software and contributors
+ * Cardboard - The Paper API implementation for Fabric
+ * Copyright (C) 2020 by Isaiah
  * 
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
